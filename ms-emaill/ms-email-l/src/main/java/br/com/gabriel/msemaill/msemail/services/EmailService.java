@@ -6,12 +6,16 @@ import br.com.gabriel.msemaill.msemail.models.EmailModel;
 import br.com.gabriel.msemaill.msemail.repositories.EmailRepository;
 import org.aspectj.bridge.IMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class EmailService {
@@ -41,5 +45,12 @@ public class EmailService {
             return emailRepository.save(emailModel);
         }
 
+    }
+    public Page<EmailModel> findAll(Pageable pageable) {
+        return  emailRepository.findAll(pageable);
+    }
+
+    public Optional<EmailModel> findById(UUID emailId) {
+        return emailRepository.findById(emailId);
     }
 }
