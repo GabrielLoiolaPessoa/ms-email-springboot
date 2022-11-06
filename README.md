@@ -22,7 +22,7 @@ $ mvn clean install
 
 # run the project
 
- ---> StartPoin class
+ ---> StartPoint class
 
 # check h2 database
 
