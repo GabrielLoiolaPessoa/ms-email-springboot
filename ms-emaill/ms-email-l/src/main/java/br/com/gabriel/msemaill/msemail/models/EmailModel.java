@@ -1,8 +1,8 @@
 package br.com.gabriel.msemaill.msemail.models;
 
+import br.com.gabriel.msemaill.msemail.enums.StatusEmail;
 import lombok.Data;
 import lombok.Generated;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
